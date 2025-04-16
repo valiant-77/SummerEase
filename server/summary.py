@@ -20,15 +20,15 @@ def extract_text_from_pdf(file_path):
     with open(file_path, 'rb') as file:
         pdf_reader = PyPDF2.PdfReader(file)
         text = ' '.join(page.extract_text() for page in pdf_reader.pages)
-        text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with single space
-        text = re.sub(r'\n', ' ', text)   # Replace newlines with space
+        text = re.sub(r'\s+', ' ', text)  
+        text = re.sub(r'\n', ' ', text)  
     return text
 
 def preprocess_text(text):
     """Clean and prepare text for summarization"""
     # Split text into sentences
     sentences = sent_tokenize(text)
-    # Remove short sentences (likely headers, page numbers, etc.)
+    # Remove short sentences 
     sentences = [sentence.strip() for sentence in sentences if len(sentence.strip()) > 30]
     return sentences
 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script> 
   <style>
-    /* Button styles */
+    
     .btn-primary {
       background-color: #3B82F6;
       color: white;
@@ -19,14 +19,13 @@
       cursor: not-allowed;
     }
 
-    /* Layout adjustments */
     .content-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 20px;
       padding: 20px;
-      min-height: calc(100vh - 4rem - 2.5rem); /* 100vh minus navbar height minus footer height */
+      min-height: calc(100vh - 4rem - 2.5rem); 
     }
 
     .thumbnail-section {
@@ -40,14 +39,14 @@
     .results-section {
       width: 100%;
       max-width: 800px;
-      display: none; /* Initially hidden */
+      display: none; 
     }
 
     .results-section.visible {
       display: block;
     }
 
-    /* Page structure */
+    
     body {
       display: flex;
       flex-direction: column;
@@ -62,7 +61,7 @@
       margin-top: auto;
     }
     
-    /* Highlights styling */
+    
     .page-section {
       margin-bottom: 30px;
       border-bottom: 1px solid #eee;
@@ -445,7 +444,7 @@
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({}), // No need to send any data for now
+          body: JSON.stringify({}), 
         });
 
         if (!response.ok) {
@@ -517,7 +516,7 @@
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({}), // No need to send any data for now
+          body: JSON.stringify({}), 
         });
 
         if (!response.ok) {
