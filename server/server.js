@@ -150,11 +150,14 @@ app.post('/get-summary', (req, res) => {
   
   // Different command based on operating system
   let command;
-  if (process.platform === 'win32') {
-    // Windows
+  if (process.env.NODE_ENV === 'production') {
+    // In production (Render)
+    command = `python3 "${pythonScriptPath}" "${filePath}"`;
+  } else if (process.platform === 'win32') {
+    // Windows (local development)
     command = `"${path.join(__dirname, 'venv', 'Scripts', 'python')}" "${pythonScriptPath}" "${filePath}"`;
   } else {
-    // Unix/Linux/MacOS
+    // Unix/Linux/MacOS (local development)
     command = `"${path.join(__dirname, 'venv', 'bin', 'python')}" "${pythonScriptPath}" "${filePath}"`;
   }
   
